@@ -26,16 +26,27 @@ function text(){
 
     console.log(result);
 
-    numText.innerHTML = `${result}`
 
+    numbers = numbers.split('').reverse().join('');
 
-    if (numbers % 10 == 1){
+    if(numbers[0] == '1' && numbers[1] != '1'){
         numText.innerHTML = `${result} гривна`;
-    } else if (numbers % 10 == 2, 3, 4) {
+    } else if((numbers[0] == '2' || numbers[0] ==  '3' || numbers[0] == '4') && numbers[1] != '1') {
         numText.innerHTML = `${result} гривны`; 
     } else {
         numText.innerHTML = `${result} гривен`;
     }
+
+
+    
+
+    // if (numbers % 10 == 1){
+    //     numText.innerHTML = `${result} гривна`;
+    // } else if (numbers % 10 == 2, 3, 4) {
+    //     numText.innerHTML = `${result} гривны`; 
+    // } else {
+    //     numText.innerHTML = `${result} гривен`;
+    // }
 
 
 
