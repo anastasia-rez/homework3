@@ -14,6 +14,8 @@ function text(){
     
     let result = '';
 
+
+
     if(numbers.length == 1 || numbers < 20){
         result =  units[numbers];
     }else if(numbers.length == 2) {
@@ -24,13 +26,29 @@ function text(){
 
     console.log(result);
 
+    numText.innerHTML = `${result}`
 
-    function declOfNum(number, titles) {
-        let cases = [2, 0, 1, 1, 1, 2];
-        return titles[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]];
-      }
 
-      numText.innerHTML = `${result} ${declOfNum(result, ['гривна', 'гривны', 'гривен'])}`;
+    if (numbers % 10 == 1){
+        numText.innerHTML = `${result} гривна`;
+    } else if (numbers % 10 == 2, 3, 4) {
+        numText.innerHTML = `${result} гривны`; 
+    } else {
+        numText.innerHTML = `${result} гривен`;
+    }
+
+
+
+
+
+
+
+    // function declOfNum(number, titles) {
+    //     let cases = [2, 0, 1, 1, 1, 2];
+    //     return titles[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]];
+    //   }
+
+    //   numText.innerHTML = `${result} ${declOfNum(result, ['гривна', 'гривны', 'гривен'])}`;
     
 
 
@@ -38,4 +56,5 @@ function text(){
 
 
     // numText.innerHTML = `${result} ${declination(result, ['гривна', 'гривны', 'гривен'])}`;
+// }
 }
